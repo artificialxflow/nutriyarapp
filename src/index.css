@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;500;700;900&display=swap');
+
+@theme {
+  --font-sans: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-brand-green: #22c55e;
+  --color-brand-green-dark: #16a34a;
+  --color-brand-orange: #f97316;
+  --color-brand-bg: #fdfdfd;
+  
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-bento: 2.5rem;
+  
+  --shadow-bento: 0 20px 50px rgba(34, 197, 94, 0.08);
+}
+
+@layer base {
+  html {
+    direction: rtl;
+  }
+  
+  body {
+    @apply bg-brand-bg text-slate-800 font-sans antialiased;
+  }
+}
+
+@layer components {
+  .nutri-card {
+    @apply bg-white border border-slate-100/50 shadow-sm rounded-bento p-6 transition-all duration-500 hover:shadow-bento;
+  }
+  
+  .nutri-button-primary {
+    @apply bg-brand-green hover:bg-brand-green-dark text-white font-black py-4 px-10 rounded-2xl transition-all shadow-lg shadow-brand-green/20 active:scale-95;
+  }
+  
+  .nutri-input {
+    @apply w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-brand-green outline-none transition-all;
+  }
+}
